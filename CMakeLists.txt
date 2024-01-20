@@ -5,6 +5,11 @@ project(physics_engine C CXX)
 set(OpenGL_GL_PREFERENCE "LEGACY")
 find_package(OpenGL REQUIRED)
 
+if (APPLE)
+link_directories("/opt/homebrew/lib")
+include_directories("/opt/homebrew/include")
+endif()
+
 include_directories(${OPENGL_INCLUDE_DIRS})
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL  "GLFW lib only")
